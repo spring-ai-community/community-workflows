@@ -1,0 +1,62 @@
+# Spring AI Community Project Registry
+#
+# This file lists all projects in the Spring AI Community organization
+# that participate in coordinated releases and shared infrastructure.
+#
+# Projects can opt-in to different levels of integration:
+# - reusable-workflows: Uses shared GitHub Actions workflows
+# - parent-pom: Inherits from community-parent POM
+# - pr-based-releases: Automatically releases when project.yml changes
+#
+# Dependency order determines release sequence for coordinated releases.
+
+organization: spring-ai-community
+default-java-version: "17"
+
+projects:
+  - name: agent-sandbox
+    repo: spring-ai-community/agent-sandbox
+    description: "Sandbox abstraction for secure code execution in AI agent applications"
+    artifact-id: agent-sandbox-parent
+    group-id: org.springaicommunity
+    dependencies: []
+    integration:
+      reusable-workflows: true
+      parent-pom: false
+      pr-based-releases: false
+
+  - name: agent-judge
+    repo: spring-ai-community/agent-judge
+    description: "Judge framework for evaluating AI agent outputs"
+    artifact-id: agent-judge
+    group-id: org.springaicommunity
+    dependencies: []
+    integration:
+      reusable-workflows: true
+      parent-pom: false
+      pr-based-releases: false
+
+  - name: spring-ai-agents
+    repo: spring-ai-community/spring-ai-agents
+    description: "Agent implementations for Spring AI"
+    artifact-id: spring-ai-agents
+    group-id: org.springaicommunity
+    dependencies: []
+    integration:
+      reusable-workflows: true
+      parent-pom: false
+      pr-based-releases: false
+
+  - name: claude-agent-sdk-java
+    repo: spring-ai-community/claude-agent-sdk-java
+    description: "Claude Code SDK for Java"
+    artifact-id: claude-code-sdk-parent
+    group-id: io.github.anthropics
+    dependencies: []
+    integration:
+      reusable-workflows: true
+      parent-pom: false
+      pr-based-releases: false
+
+# Projects NOT managed by this registry (external management):
+# - spring-ai-agent-utils: Managed externally, not part of community releases
